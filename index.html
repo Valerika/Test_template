@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="template/tmpl.js" charset="utf-8"></script>
+    <script src="js/script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <!-- TEST TEMPLATE -->
+  <script type="text/tmpl" id="test">
+    <div class="formContainer">
+      <h1 class="nameOfTest">
+        Тест
+      </h1>
+      <% for (i = 0; i < data.length; i++) { %>
+        <h2 class="questions">
+          <%= data[i].name %>
+        </h2>
+        <form class="formBox">
+          <label class="answers">
+            <input class= "answersCheckbox" type="checkbox" value=""></input><%= data[i].answer1.text  %>
+          </label>
+          <label class= "answers">
+            <input class="answersCheckbox"  type="checkbox" value=""></input><%= data[i].answer2.text %>
+          </label>
+          <label class="answers">
+            <input class= "answersCheckbox"  type="checkbox" value=""></input><%= data[i].answer3.text %>
+          </label>
+        </form>
+      <%}%>
+      <button class="checkButton pure-button pure-button-primary">Проверить мои результаты</button>
+    </div>
+  </script>
+<!-- FINISH TEST TEMPLATE -->
+
+<!-- MODAL WINDOW TEMPLATE OF RESULT TEST -->
+  <script type="text/tmplJR" id="results">
+    <div class="resultsWrapper">
+      <div class="resultsBox">
+        <span><%="Правильных ответов "+correctAnswers+' из '+allAnswers%></span>
+        <button class="resetButton pure-button pure-button-primary" >Попробовать еще раз</button>
+      </div>
+    </div>
+  </script>
+<!--FINISH MODAL WINDOW TEMPLATE OF RESULT TEST -->
+  </body>
+</html>
